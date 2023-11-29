@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CodizworldApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CodizworldApplication.class, args);
-
 	}
 
 }

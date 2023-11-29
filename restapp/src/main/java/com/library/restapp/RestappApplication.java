@@ -8,7 +8,8 @@ public class RestappApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RestappApplication.class, args);
-		
+
 	}
+
 
 }

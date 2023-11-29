@@ -36,7 +36,7 @@ public class BookServiceImpl implements BookService {
     public Book removeBook(int bookId) {
         Book book = bookRepo.findById(bookId).orElse(null);
         bookRepo.delete(book);
-        return book;
+        return null;
     }
 
     @Override

@@ -1,10 +1,13 @@
 package com.library.restapp.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,15 +18,18 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookId; 
 
-    @Column(name = "title")
+    @Column(name = "book_title")
     private String bookTitle; 
-    private String author; 
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Author author;
+
     private Float price; 
 
     public Book() {
     }
 
-    public Book(int bookId, String bookTitle, String author, Float price) {
+    public Book(int bookId, String bookTitle, Author author, Float price) {
         this.bookId = bookId;
         this.bookTitle = bookTitle;
         this.author = author;
@@ -46,11 +52,11 @@ public class Book {
         this.bookTitle = bookTitle;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return this.author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
