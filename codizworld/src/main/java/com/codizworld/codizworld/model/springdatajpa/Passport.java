@@ -1,6 +1,8 @@
-package com.codizworld.codizworld.model;
+package com.codizworld.codizworld.model.springdatajpa;
 
 import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -18,7 +20,6 @@ public class Passport {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "passport_id")
     private int id;
 
     @Column(name = "passport_number", unique = true)
@@ -35,6 +36,7 @@ public class Passport {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "person_id", unique = true)
+    @JsonIgnore
     private Person person; 
 
 
