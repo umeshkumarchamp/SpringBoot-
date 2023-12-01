@@ -56,7 +56,6 @@ public class PersonServiceImpl implements PersonService {
         // Save the updated Passport entity
         personRepo.save(savedPerson);
         System.out.println("Saved Person: ");
-
         return savedPerson;
     }
 
