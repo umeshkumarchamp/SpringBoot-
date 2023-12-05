@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codiz World</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Welcome to Codiz World</h1>
+
+    <h2>Simple Variable</h2>
+    <div>Title : <span th:text="${club.title}">Abc</span></div>
+    <div>Content : <span th:text="${club.content}">Abc</span></div>
+    <br><br>
+    <h2>Selection Variable</h2>
+    <div th:object="${club}">
+        <p>Title : <span th:text="*{title}">Abc</span></p>
+        <p>Content : <span th:text="*{content}">Abc</span></p>
+    </div>
+    
+</body>
+
+</html>
