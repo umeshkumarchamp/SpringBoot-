@@ -45,7 +45,6 @@ public class ClubController {
     public String contact(Model model) {
         model.addAttribute("id", 10005);
         return "views/contact";
-
     }
 
     @ResponseBody

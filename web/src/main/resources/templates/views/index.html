@@ -5,21 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codiz World</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" >
 </head>
 
 <body>
-    <h1 style="text-align: center;">Welcome to Codiz World</h1>
 
-    <h2>Simple Variable</h2>
-    <div>Title : <span th:text="${club.title}">Abc</span></div>
-    <div>Content : <span th:text="${club.content}">Abc</span></div>
-    <br><br>
-    <h2>Selection Variable</h2>
-    <div th:object="${club}">
-        <p>Title : <span th:text="*{title}">Abc</span></p>
-        <p>Content : <span th:text="*{content}">Abc</span></p>
-    </div>
-    
+    <header>
+        <h1>Welcome to Codiz World</h1>
+    </header>
+
+    <nav>
+        <a href="#" th:href="@{/index}">Home</a>
+        <a href="#" th:href="@{/contact}">Contact</a>
+        <a href="#" th:href="@{/about}">About</a>
+    </nav>
+    <br>
+    <a href="#" th:href="@{/users}">UsersList</a>
+    <section>
+        <h2>Simple Variable</h2>
+        <div>Title : <span th:text="${club.title}">Abc</span></div>
+        <div>Content : <span th:text="${club.content}">Abc</span></div>
+        <br><br>
+        <h2>Selection Variable</h2>
+        <div th:object="${club}">
+            <p>Title : <span th:text="*{title}">Abc</span></p>
+            <p>Content : <span th:text="*{content}">Abc</span></p>
+        </div>
+
+        <div th:with="id=101, name='Umesh Kumar', email='umesh@gmail.com'"  >
+            <h3>Employee Id : <span th:text="${id}"></span></h3>
+            <h3>Name : <span th:text="${name}">name</span></h3>
+            <h3 th:text="'Email-Id : '+${email}"></h3>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 codizworld. All rights reserved.
+    </footer>
+
 </body>
 
 </html>

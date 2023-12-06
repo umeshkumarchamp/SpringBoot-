@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codiz World</title>
+</head>
+
+<body>  
+    <h1>This is about page.</h1>    
+    <a href="#" th:href="@{/index}">Home</a>
+    <a href="#" th:href="@{/emp/101}">Get Employee 1</a>
+    <a href="#" th:href="@{/emp/{empId}(empId=${id})}">Get Employee 2</a>
+    <a href="#" th:href="@{/emp/(empId=${id})}">Get Employee 3</a><br>
+
+    <h2>Name : <span th:text="${#strings.toUpperCase(name)}">umesh</span></h2>
+    <h2>Date : <span th:text="${date}">date</span></h2>
+
+</body>
+
+</html>
